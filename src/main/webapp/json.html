@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#submit").click(function () {
+
+
+                var str={"name":"zhangsan","password":"15"};
+                var settings={
+                    url:"http://localhost:8080/Day51_SpringMVC2/json",
+                    type:"post",
+                    contentType:"application/json",
+                    dataType:"json",
+                    data:JSON.stringify(str),
+                    success:function (data) {
+                        alert(1)
+                        if(data==1){
+                            alert(1)
+                        }
+                    }
+
+
+                }
+                $.ajax(settings);
+               /*alert(1)
+               var data={
+                   'name':'zhangsan','password':'15'
+               }
+               $.post("http://localhost:8080/Day51_SpringMVC2/json",data,function (data) {
+
+               })*/
+            })
+        })
+    </script>
+</head>
+<body>
+<button id="submit">提交</button>
+</body>
+</html>
